@@ -1,0 +1,45 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python byte code and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local credentials & secrets
+.env
+.env.*
+.streamlit/secrets.toml
+
+# MLflow experiment tracking
+mlruns/
+mlartifacts/
+mlflow.db
+
+# Datasets (Pre-processed and raw CSVs exceed 290 MB; not required for app inference)
+data/raw/
+data/processed/
+*.csv
+
+# Local SQLite prediction history ledger
+data/predictions_history.db
+*.db
+*.sqlite3
+
+# Model serialization: Track ONLY production models required for Streamlit app inference
+# Excludes Random Forest candidate models (163 MB and 100 MB) exceeding GitHub's 100 MB limit
+models/*/*.joblib
+!models/classification/best_application_model.joblib
+!models/classification/label_encoder.joblib
+!models/regression/best_application_model.joblib

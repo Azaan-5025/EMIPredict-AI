@@ -1,0 +1,689 @@
+{
+  "evaluation_timestamp": "2026-10-21T23:43:47",
+  "test_dataset": {
+    "path": "data\\processed\\test.csv",
+    "rows": 80960,
+    "columns": 27,
+    "classification_target_distribution": {
+      "Eligible": 14889,
+      "High_Risk": 3497,
+      "Not_Eligible": 62574
+    },
+    "regression_target_summary": {
+      "min": 500.0,
+      "mean": 6787.95,
+      "median": 4228.0,
+      "max": 91040.4,
+      "floor_count": 21347,
+      "floor_pct": 26.37
+    }
+  },
+  "classification_benchmarks": [
+    {
+      "model_name": "best_application_model (XGBoost Balanced)",
+      "feature_set": "application",
+      "model_path": "models\\classification\\best_application_model.joblib",
+      "evaluation_time_seconds": 2.42,
+      "metrics": {
+        "accuracy": 0.842,
+        "balanced_accuracy": 0.822,
+        "macro_f1": 0.6968,
+        "weighted_f1": 0.8803,
+        "roc_auc_ovr_macro": 0.962,
+        "roc_auc_ovr_weighted": 0.9858
+      },
+      "per_class": {
+        "Eligible": {
+          "precision": 0.9011444059629574,
+          "recall": 0.8038820605816375,
+          "f1_score": 0.8497390933939157,
+          "support": 14889
+        },
+        "High_Risk": {
+          "precision": 0.20083741395216806,
+          "recall": 0.8092650843580211,
+          "f1_score": 0.3218103252217421,
+          "support": 3497
+        },
+        "Not_Eligible": {
+          "precision": 0.9958945266575848,
+          "recall": 0.8528622111420079,
+          "f1_score": 0.9188453956147071,
+          "support": 62574
+        }
+      },
+      "confusion_matrix": [
+        [
+          11969,
+          2853,
+          67
+        ],
+        [
+          514,
+          2830,
+          153
+        ],
+        [
+          799,
+          8408,
+          53367
+        ]
+      ]
+    },
+    {
+      "model_name": "best_applicant_only_model (Random Forest Balanced)",
+      "feature_set": "applicant_only",
+      "model_path": "models\\classification\\best_applicant_only_model.joblib",
+      "evaluation_time_seconds": 2.64,
+      "metrics": {
+        "accuracy": 0.7148,
+        "balanced_accuracy": 0.5457,
+        "macro_f1": 0.5016,
+        "weighted_f1": 0.7516,
+        "roc_auc_ovr_macro": 0.8205,
+        "roc_auc_ovr_weighted": 0.863
+      },
+      "per_class": {
+        "Eligible": {
+          "precision": 0.47664032175092363,
+          "recall": 0.684532204983545,
+          "f1_score": 0.5619761799735333,
+          "support": 14889
+        },
+        "High_Risk": {
+          "precision": 0.07584058438070684,
+          "recall": 0.20188733199885617,
+          "f1_score": 0.11026081524285491,
+          "support": 3497
+        },
+        "Not_Eligible": {
+          "precision": 0.9344314474417125,
+          "recall": 0.7506632147537315,
+          "f1_score": 0.8325268960138955,
+          "support": 62574
+        }
+      },
+      "confusion_matrix": [
+        [
+          10192,
+          2372,
+          2325
+        ],
+        [
+          1820,
+          706,
+          971
+        ],
+        [
+          9371,
+          6231,
+          46972
+        ]
+      ]
+    },
+    {
+      "model_name": "logistic_regression_application (Balanced)",
+      "feature_set": "application",
+      "model_path": "models\\classification\\logistic_regression_application.joblib",
+      "evaluation_time_seconds": 2.13,
+      "metrics": {
+        "accuracy": 0.7853,
+        "balanced_accuracy": 0.7307,
+        "macro_f1": 0.6298,
+        "weighted_f1": 0.8367,
+        "roc_auc_ovr_macro": 0.9224,
+        "roc_auc_ovr_weighted": 0.9546
+      },
+      "per_class": {
+        "Eligible": {
+          "precision": 0.8210233676459538,
+          "recall": 0.7338975082275505,
+          "f1_score": 0.7750195049294276,
+          "support": 14889
+        },
+        "High_Risk": {
+          "precision": 0.1389209902074083,
+          "recall": 0.6531312553617387,
+          "f1_score": 0.2291102417494232,
+          "support": 3497
+        },
+        "Not_Eligible": {
+          "precision": 0.983577426283929,
+          "recall": 0.8049509380893023,
+          "f1_score": 0.8853441608662026,
+          "support": 62574
+        }
+      },
+      "confusion_matrix": [
+        [
+          10927,
+          3521,
+          441
+        ],
+        [
+          813,
+          2284,
+          400
+        ],
+        [
+          1569,
+          10636,
+          50369
+        ]
+      ]
+    },
+    {
+      "model_name": "random_forest_application (Balanced)",
+      "feature_set": "application",
+      "model_path": "models\\classification\\random_forest_application.joblib",
+      "evaluation_time_seconds": 2.89,
+      "metrics": {
+        "accuracy": 0.8468,
+        "balanced_accuracy": 0.751,
+        "macro_f1": 0.6721,
+        "weighted_f1": 0.8747,
+        "roc_auc_ovr_macro": 0.9425,
+        "roc_auc_ovr_weighted": 0.9713
+      },
+      "per_class": {
+        "Eligible": {
+          "precision": 0.8056092199054027,
+          "recall": 0.8122103566391295,
+          "f1_score": 0.8088963210702341,
+          "support": 14889
+        },
+        "High_Risk": {
+          "precision": 0.18923792350763974,
+          "recall": 0.5702030311695739,
+          "f1_score": 0.2841670229442782,
+          "support": 3497
+        },
+        "Not_Eligible": {
+          "precision": 0.9830542120840251,
+          "recall": 0.8705372838559146,
+          "f1_score": 0.923380740087807,
+          "support": 62574
+        }
+      },
+      "confusion_matrix": [
+        [
+          12093,
+          2368,
+          428
+        ],
+        [
+          992,
+          1994,
+          511
+        ],
+        [
+          1926,
+          6175,
+          54473
+        ]
+      ]
+    },
+    {
+      "model_name": "xgboost_application (Balanced)",
+      "feature_set": "application",
+      "model_path": "models\\classification\\xgboost_application.joblib",
+      "evaluation_time_seconds": 3.66,
+      "metrics": {
+        "accuracy": 0.842,
+        "balanced_accuracy": 0.822,
+        "macro_f1": 0.6968,
+        "weighted_f1": 0.8803,
+        "roc_auc_ovr_macro": 0.962,
+        "roc_auc_ovr_weighted": 0.9858
+      },
+      "per_class": {
+        "Eligible": {
+          "precision": 0.9011444059629574,
+          "recall": 0.8038820605816375,
+          "f1_score": 0.8497390933939157,
+          "support": 14889
+        },
+        "High_Risk": {
+          "precision": 0.20083741395216806,
+          "recall": 0.8092650843580211,
+          "f1_score": 0.3218103252217421,
+          "support": 3497
+        },
+        "Not_Eligible": {
+          "precision": 0.9958945266575848,
+          "recall": 0.8528622111420079,
+          "f1_score": 0.9188453956147071,
+          "support": 62574
+        }
+      },
+      "confusion_matrix": [
+        [
+          11969,
+          2853,
+          67
+        ],
+        [
+          514,
+          2830,
+          153
+        ],
+        [
+          799,
+          8408,
+          53367
+        ]
+      ]
+    }
+  ],
+  "regression_benchmarks": [
+    {
+      "model_name": "best_application_model (XGBoost Regressor)",
+      "feature_set": "application",
+      "model_path": "models\\regression\\best_application_model.joblib",
+      "evaluation_time_seconds": 2.07,
+      "prediction_distribution": {
+        "min_raw_prediction": -5015.73,
+        "max_raw_prediction": 61909.15,
+        "count_below_floor": 10661,
+        "pct_below_floor": 13.17
+      },
+      "raw_predictions": {
+        "overall": {
+          "rmse": 1350.46,
+          "mae": 913.68,
+          "r2": 0.9698,
+          "mape": 50.84
+        },
+        "floor_cohort": {
+          "rmse": 914.72,
+          "mae": 658.07,
+          "r2": 0.0,
+          "mape": 131.61,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 591.010009765625,
+          "pred_min": -5015.72998046875,
+          "pred_max": 14090.1396484375
+        },
+        "above_floor_cohort": {
+          "rmse": 1475.53,
+          "mae": 1005.22,
+          "r2": 0.9653,
+          "mape": 21.92,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 9027.83984375,
+          "pred_min": -1505.25,
+          "pred_max": 61909.1484375
+        }
+      },
+      "clipped_predictions": {
+        "overall": {
+          "rmse": 1319.46,
+          "mae": 838.55,
+          "r2": 0.9712,
+          "mape": 35.84
+        },
+        "floor_cohort": {
+          "rmse": 724.63,
+          "mae": 374.54,
+          "r2": 0.0,
+          "mape": 74.91,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 874.5399780273438,
+          "pred_min": 500.0,
+          "pred_max": 14090.1396484375
+        },
+        "above_floor_cohort": {
+          "rmse": 1475.25,
+          "mae": 1004.71,
+          "r2": 0.9654,
+          "mape": 21.86,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 9028.349609375,
+          "pred_min": 500.0,
+          "pred_max": 61909.1484375
+        }
+      }
+    },
+    {
+      "model_name": "best_applicant_only_model (XGBoost Regressor)",
+      "feature_set": "applicant_only",
+      "model_path": "models\\regression\\best_applicant_only_model.joblib",
+      "evaluation_time_seconds": 1.68,
+      "prediction_distribution": {
+        "min_raw_prediction": -5928.48,
+        "max_raw_prediction": 61962.99,
+        "count_below_floor": 10979,
+        "pct_below_floor": 13.56
+      },
+      "raw_predictions": {
+        "overall": {
+          "rmse": 1331.56,
+          "mae": 897.76,
+          "r2": 0.9706,
+          "mape": 51.11
+        },
+        "floor_cohort": {
+          "rmse": 927.5,
+          "mae": 667.45,
+          "r2": 0.0,
+          "mape": 133.49,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 565.5599975585938,
+          "pred_min": -5928.47998046875,
+          "pred_max": 18633.259765625
+        },
+        "above_floor_cohort": {
+          "rmse": 1449.11,
+          "mae": 980.24,
+          "r2": 0.9666,
+          "mape": 21.61,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 9033.580078125,
+          "pred_min": -1043.47998046875,
+          "pred_max": 61962.98828125
+        }
+      },
+      "clipped_predictions": {
+        "overall": {
+          "rmse": 1297.84,
+          "mae": 818.07,
+          "r2": 0.9721,
+          "mape": 35.19
+        },
+        "floor_cohort": {
+          "rmse": 725.49,
+          "mae": 366.51,
+          "r2": 0.0,
+          "mape": 73.3,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 866.510009765625,
+          "pred_min": 500.0,
+          "pred_max": 18633.259765625
+        },
+        "above_floor_cohort": {
+          "rmse": 1448.82,
+          "mae": 979.77,
+          "r2": 0.9666,
+          "mape": 21.55,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 9034.0595703125,
+          "pred_min": 500.0,
+          "pred_max": 61962.98828125
+        }
+      }
+    },
+    {
+      "model_name": "linear_regression_application (Ridge)",
+      "feature_set": "application",
+      "model_path": "models\\regression\\linear_regression_application.joblib",
+      "evaluation_time_seconds": 2.16,
+      "prediction_distribution": {
+        "min_raw_prediction": -14154.67,
+        "max_raw_prediction": 46206.09,
+        "count_below_floor": 12520,
+        "pct_below_floor": 15.46
+      },
+      "raw_predictions": {
+        "overall": {
+          "rmse": 4158.24,
+          "mae": 2997.64,
+          "r2": 0.7138,
+          "mape": 194.54
+        },
+        "floor_cohort": {
+          "rmse": 3555.67,
+          "mae": 2750.11,
+          "r2": 0.0,
+          "mape": 550.02,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 330.55,
+          "pred_min": -14154.67,
+          "pred_max": 19470.39
+        },
+        "above_floor_cohort": {
+          "rmse": 4353.79,
+          "mae": 3086.28,
+          "r2": 0.6982,
+          "mape": 67.24,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 9111.88,
+          "pred_min": -9985.7,
+          "pred_max": 46206.09
+        }
+      },
+      "clipped_predictions": {
+        "overall": {
+          "rmse": 3915.17,
+          "mae": 2584.6,
+          "r2": 0.7463,
+          "mape": 115.45
+        },
+        "floor_cohort": {
+          "rmse": 2418.47,
+          "mae": 1290.33,
+          "r2": 0.0,
+          "mape": 258.07,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 1790.33,
+          "pred_min": 500.0,
+          "pred_max": 19470.39
+        },
+        "above_floor_cohort": {
+          "rmse": 4327.02,
+          "mae": 3048.06,
+          "r2": 0.7019,
+          "mape": 64.38,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 9150.1,
+          "pred_min": 500.0,
+          "pred_max": 46206.09
+        }
+      }
+    },
+    {
+      "model_name": "random_forest_application (Random Forest)",
+      "feature_set": "application",
+      "model_path": "models\\regression\\random_forest_application.joblib",
+      "evaluation_time_seconds": 2.97,
+      "prediction_distribution": {
+        "min_raw_prediction": 500.0,
+        "max_raw_prediction": 71226.4,
+        "count_below_floor": 0,
+        "pct_below_floor": 0.0
+      },
+      "raw_predictions": {
+        "overall": {
+          "rmse": 1516.84,
+          "mae": 911.13,
+          "r2": 0.9619,
+          "mape": 25.23
+        },
+        "floor_cohort": {
+          "rmse": 470.05,
+          "mae": 189.28,
+          "r2": 0.0,
+          "mape": 37.86,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 689.28,
+          "pred_min": 500.0,
+          "pred_max": 10090.22
+        },
+        "above_floor_cohort": {
+          "rmse": 1745.16,
+          "mae": 1169.62,
+          "r2": 0.9515,
+          "mape": 20.7,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 8992.39,
+          "pred_min": 502.57,
+          "pred_max": 71226.4
+        }
+      },
+      "clipped_predictions": {
+        "overall": {
+          "rmse": 1516.84,
+          "mae": 911.13,
+          "r2": 0.9619,
+          "mape": 25.23
+        },
+        "floor_cohort": {
+          "rmse": 470.05,
+          "mae": 189.28,
+          "r2": 0.0,
+          "mape": 37.86,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 689.28,
+          "pred_min": 500.0,
+          "pred_max": 10090.22
+        },
+        "above_floor_cohort": {
+          "rmse": 1745.16,
+          "mae": 1169.62,
+          "r2": 0.9515,
+          "mape": 20.7,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 8992.39,
+          "pred_min": 502.57,
+          "pred_max": 71226.4
+        }
+      }
+    },
+    {
+      "model_name": "xgboost_application (XGBoost Regressor)",
+      "feature_set": "application",
+      "model_path": "models\\regression\\xgboost_application.joblib",
+      "evaluation_time_seconds": 1.97,
+      "prediction_distribution": {
+        "min_raw_prediction": -5015.73,
+        "max_raw_prediction": 61909.15,
+        "count_below_floor": 10661,
+        "pct_below_floor": 13.17
+      },
+      "raw_predictions": {
+        "overall": {
+          "rmse": 1350.46,
+          "mae": 913.68,
+          "r2": 0.9698,
+          "mape": 50.84
+        },
+        "floor_cohort": {
+          "rmse": 914.72,
+          "mae": 658.07,
+          "r2": 0.0,
+          "mape": 131.61,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 591.010009765625,
+          "pred_min": -5015.72998046875,
+          "pred_max": 14090.1396484375
+        },
+        "above_floor_cohort": {
+          "rmse": 1475.53,
+          "mae": 1005.22,
+          "r2": 0.9653,
+          "mape": 21.92,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 9027.83984375,
+          "pred_min": -1505.25,
+          "pred_max": 61909.1484375
+        }
+      },
+      "clipped_predictions": {
+        "overall": {
+          "rmse": 1319.46,
+          "mae": 838.55,
+          "r2": 0.9712,
+          "mape": 35.84
+        },
+        "floor_cohort": {
+          "rmse": 724.63,
+          "mae": 374.54,
+          "r2": 0.0,
+          "mape": 74.91,
+          "count": 21347,
+          "true_mean": 500.0,
+          "pred_mean": 874.5399780273438,
+          "pred_min": 500.0,
+          "pred_max": 14090.1396484375
+        },
+        "above_floor_cohort": {
+          "rmse": 1475.25,
+          "mae": 1004.71,
+          "r2": 0.9654,
+          "mape": 21.86,
+          "count": 59613,
+          "true_mean": 9039.63,
+          "pred_mean": 9028.349609375,
+          "pred_min": 500.0,
+          "pred_max": 61909.1484375
+        }
+      }
+    }
+  ],
+  "generalization_gaps": {
+    "classification_application_xgboost": {
+      "macro_f1": {
+        "cv": 0.6953,
+        "test": 0.6968,
+        "gap": 0.0015
+      },
+      "balanced_accuracy": {
+        "cv": 0.8193,
+        "test": 0.822,
+        "gap": 0.0027
+      },
+      "roc_auc_ovr": {
+        "cv": 0.9614,
+        "test": 0.962,
+        "gap": 0.0006
+      }
+    },
+    "regression_application_xgboost": {
+      "r2": {
+        "cv": 0.9691,
+        "test": 0.9698,
+        "gap": 0.0007
+      },
+      "rmse": {
+        "cv": 1359.68,
+        "test": 1350.46,
+        "gap": -9.22
+      },
+      "mae": {
+        "cv": 916.12,
+        "test": 913.68,
+        "gap": -2.44
+      }
+    }
+  },
+  "multi_task_alignment": {
+    "total_test_samples": 80960,
+    "ratio_gt_1_count": 59363,
+    "ratio_gt_1_predicted_not_eligible_pct": 89.14,
+    "ratio_le_0_526_count": 11532,
+    "ratio_le_0_526_predicted_eligible_pct": 93.7,
+    "predicted_high_risk_count": 14091,
+    "predicted_high_risk_ratio_median": 0.938,
+    "predicted_high_risk_ratio_iqr": [
+      0.726,
+      1.214
+    ]
+  }
+}

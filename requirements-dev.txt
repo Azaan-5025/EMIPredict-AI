@@ -1,0 +1,6 @@
+# EMIPredict AI — Development, Model Training & Full Audit Dependencies
+-r requirements.txt
+pytest==9.1.1
+mlflow==3.17.1
+matplotlib==3.11.2
+seaborn==0.13.2

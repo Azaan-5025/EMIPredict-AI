@@ -1,0 +1,9 @@
+# EMIPredict AI — Streamlit Community Cloud Production Dependencies
+# Target Runtime: Python 3.12 (Linux x86_64 compatible)
+streamlit==1.66.0
+scikit-learn==1.9.1
+xgboost==3.4.1
+pandas==3.0.6
+numpy==2.5.4
+scipy==1.18.1
+joblib==1.6.0
